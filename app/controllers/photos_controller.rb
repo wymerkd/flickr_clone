@@ -1,4 +1,10 @@
 class PhotosController < ApplicationController
+
+  def index
+    @photos = Photo.all
+    render :index
+  end
+
   def new
     @user = User.find(params[:user_id])
     @photo = @user.photos.new

@@ -1,0 +1,17 @@
+<div class="listHeader">
+  <p><%= link_to "Create New Photo", new_photo_path %></p>
+  <h4>These be the Flikrred images we got</h4>
+</div>
+<% if @photos.any? %>
+<div>
+  <ul class="scrollBar">
+    <% @photos.each do |photo| %>
+    <li><%= link_to photo.name, photo_path(photo)%></li>
+    <% end %>
+  </ul>
+</div>
+<% else %>
+<p>There are no photos yet.</p>
+<% end %>
+
+</div>
